@@ -324,9 +324,6 @@ default:
           <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase relative text-center leading-none">
             DRAGON <span className="text-red-600">MONEY</span>
           </h1>
-          <p className="text-[9px] text-gray-600 uppercase tracking-[0.4em] font-bold text-center mt-3">
-            Лицензия: GLH-OCCHKTW0705032021
-          </p>
         </div>
       </div>
 
