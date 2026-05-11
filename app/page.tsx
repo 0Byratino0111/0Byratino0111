@@ -311,34 +311,35 @@ case 'streamers':
       </div>
     </div>
   );
-      // ── ГЛАВНАЯ ──
-      default:
-          return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-12 animate-in fade-in duration-1000">
-      <div className="relative group">
-        {/* Свечение за текстом */}
-        <div className="absolute -inset-10 bg-red-600/20 blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-        <h1 className="text-7xl md:text-9xl font-black italic tracking-tighter uppercase relative">
-          DRAGON <span className="text-red-600">MONEY</span>
-        </h1>
-      </div>
+     // --- ГЛАВНАЯ (ТОЛЬКО ЦЕНТР) ---
+    default:
+      return (
+        <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-20 animate-in fade-in duration-1000">
+          
+          {/* Логотип */}
+          <div className="text-center relative">
+            <div className="absolute -inset-20 bg-red-600/5 blur-[120px] rounded-full" />
+            <h1 className="text-8xl md:text-[13rem] font-black italic tracking-tighter uppercase leading-none relative z-10">
+              DRAGON <span className="text-red-600">MONEY</span>
+            </h1>
+          </div>
 
-            {/* Джекпот */}
-            <div className="bg-[#050505] border border-white/5 rounded-[50px] p-12 max-w-3xl mx-auto shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent shadow-[0_0_20px_#dc2626]" />
-              <p className="text-[10px] uppercase tracking-[0.8em] text-red-600 font-black mb-4">Global Jackpot</p>
-              <div className="text-5xl md:text-8xl font-black italic text-white tabular-nums tracking-tighter">
-                ₽{jackpot.toLocaleString()}
-              </div>
-              <button className="mt-10 px-16 py-5 bg-red-600 hover:bg-red-500 rounded-full font-black uppercase italic hover:scale-105 transition-all shadow-xl shadow-red-900/40 tracking-widest text-sm">
-                Ворваться в игру
-              </button>
+          {/* Джекпот */}
+          <div className="text-center relative">
+            <div className="absolute inset-0 bg-red-600/10 blur-[80px] rounded-full animate-pulse" />
+            <p className="text-[11px] font-black uppercase tracking-[0.6em] text-gray-600 mb-6 relative text-center w-full">
+              Global Jackpot
+            </p>
+            <div className="text-8xl md:text-[10rem] font-black italic text-white relative flex items-center justify-center gap-6 tabular-nums tracking-tight">
+              <span className="text-red-600 text-6xl md:text-8xl not-italic">₽</span>
+              {jackpot.toLocaleString()}
             </div>
           </div>
-        );
-    }
-  };
 
+        </div>
+      );
+  } // Закрывает switch
+}; // Закрывает функцию renderView
   return (
     <main className="min-h-screen bg-[#020202] text-white relative overflow-x-hidden font-sans flex flex-col">
       {/* Навигация */}
