@@ -358,9 +358,6 @@ case 'streamers':
     <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase text-center leading-none relative">
       DRAGON <span className="text-red-600">MONEY</span>
     </h1>
-    <p className="text-[9px] text-gray-600 uppercase tracking-[0.4em] font-bold text-center">
-      Лицензия: GLH-OCCHKTW0705032021
-    </p>
   </div>
 
 </div>
