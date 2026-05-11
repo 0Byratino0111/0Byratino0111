@@ -316,43 +316,38 @@ default:
   return (
     <div className="flex flex-col items-center space-y-8 animate-in fade-in duration-1000 pb-40">
 
- {/* ── HERO ── */}
-<div className="relative flex flex-col items-center justify-center text-center py-20"
-     style={{ 
-       minHeight: '420px',
-       marginLeft: 'calc(-50vw + 50%)',
-       width: '100vw',
-     }}>
+{/* ── HERO ── */}
+<div className="relative flex items-center w-full" style={{ minHeight: '420px', marginLeft: 'calc(-50vw + 50%)', width: '100vw' }}>
 
-  {/* Дракон слева — абсолютно, от левого края экрана */}
-  <img src="/dragon-left.jpg.jpg" alt="" style={{
-    position: 'absolute', left: 0, top: 0,
-    height: '100%', width: '40%',
-    objectFit: 'cover', objectPosition: 'right center',
-    WebkitMaskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
-    maskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
-    zIndex: 0,
+  {/* Левый дракон */}
+  <div className="flex-1 h-full" style={{
+    minHeight: '420px',
+    backgroundImage: 'url(/dragon-left.jpg.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    WebkitMaskImage: 'linear-gradient(to right, black 0%, black 40%, transparent 100%)',
+    maskImage: 'linear-gradient(to right, black 0%, black 40%, transparent 100%)',
   }} />
 
-  {/* Дракон справа — абсолютно, от правого края экрана */}
-  <img src="/dragon-right.jpg.jpg" alt="" style={{
-    position: 'absolute', right: 0, top: 0,
-    height: '100%', width: '40%',
-    objectFit: 'cover', objectPosition: 'left center',
-    WebkitMaskImage: 'linear-gradient(to left, black 50%, transparent 100%)',
-    maskImage: 'linear-gradient(to left, black 50%, transparent 100%)',
-    zIndex: 0,
-  }} />
-
-  {/* Центральный текст */}
-  <div className="relative" style={{ zIndex: 10 }}>
-    <h1 className="text-6xl md:text-8xl font-black italic tracking-tighter text-white">
+  {/* Центр */}
+  <div className="flex flex-col items-center justify-center text-center px-8 shrink-0" style={{ width: '520px', zIndex: 10 }}>
+    <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter text-white whitespace-nowrap">
       DRAGON <span className="text-red-600">MONEY</span>
     </h1>
-    <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed mt-4 px-4">
+    <p className="text-gray-400 text-xs md:text-sm max-w-xs mx-auto leading-relaxed mt-3">
       Экосистема азарта нового поколения. Прозрачность, скорость и легендарные выигрыши.
     </p>
   </div>
+
+  {/* Правый дракон */}
+  <div className="flex-1 h-full" style={{
+    minHeight: '420px',
+    backgroundImage: 'url(/dragon-right.jpg.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    WebkitMaskImage: 'linear-gradient(to left, black 0%, black 40%, transparent 100%)',
+    maskImage: 'linear-gradient(to left, black 0%, black 40%, transparent 100%)',
+  }} />
 
 </div>
       {/* ── ДЖЕКПОТ ── */}
