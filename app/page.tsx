@@ -322,7 +322,7 @@ case 'streamers':
   {/* Дракон слева */}
   <div className="absolute left-0 top-0 h-full" style={{ width: '420px', zIndex: 0 }}>
     <Image
-      src="/dragon-left.jpg"
+      src="/dragon-left.jpg.jpg"
       alt=""
       fill
       style={{
@@ -338,7 +338,7 @@ case 'streamers':
   {/* Дракон справа */}
   <div className="absolute right-0 top-0 h-full" style={{ width: '420px', zIndex: 0 }}>
     <Image
-      src="/dragon-right.jpg"
+      src="/dragon-right.jpg.jpg"
       alt=""
       fill
       style={{
