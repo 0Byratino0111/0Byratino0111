@@ -314,53 +314,36 @@ case 'streamers':
   );
 default:
   return (
-    <div className="flex flex-col items-center space-y-8 animate-in fade-in duration-1000 pb-40">
-{/* ── HERO ── */}
-<div className="relative flex flex-col items-center justify-center text-center space-y-4 py-20">
-  <div className="absolute inset-0 bg-red-600/5 blur-[120px] rounded-full" />
-  <h1 className="relative text-6xl md:text-8xl font-black italic tracking-tighter text-white">
-    DRAGON <span className="text-red-600">MONEY</span>
-  </h1>
-  <p className="relative text-gray-400 text-sm max-w-xl mx-auto leading-relaxed px-4">
-    Экосистема азарта нового поколения. Прозрачность, скорость и легендарные выигрыши в одном месте.
-  </p>
-</div>
+    <div className="flex flex-col items-center space-y-14 animate-in fade-in duration-1000 pb-40">
 
-
-      {/* ── ДЖЕКПОТ ── */}
-      <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-[32px] p-6 md:p-10 text-center shadow-2xl w-full max-w-2xl">
-        <div className="text-red-500 font-bold text-xs tracking-[0.3em] mb-4 uppercase">
-          Global Progressive Jackpot
+      {/* ── HERO ── */}
+      <div className="relative w-full flex flex-col items-center pt-6 space-y-5">
+        <div className="relative group">
+          <div className="absolute -inset-12 bg-red-600/15 blur-[120px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+          <p className="text-[9px] uppercase tracking-[0.6em] text-red-600 font-black mb-3 text-center">Официальный портал</p>
+          <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase relative text-center leading-none">
+            DRAGON <span className="text-red-600">MONEY</span>
+          </h1>
+          <p className="text-[9px] text-gray-600 uppercase tracking-[0.4em] font-bold text-center mt-3">
+            Лицензия: GLH-OCCHKTW0705032021
+          </p>
         </div>
-        <div className="text-4xl md:text-7xl font-bold text-white mb-4 tabular-nums tracking-tight">
+      </div>
+
+      {/* ── JACKPOT ── */}
+      <div className="bg-[#050505] border border-white/5 rounded-[40px] px-12 py-10 w-full max-w-2xl mx-auto shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent" />
+        <p className="text-[9px] uppercase tracking-[0.8em] text-red-600 font-black mb-3 text-center">Global Jackpot</p>
+        <div className="text-4xl md:text-6xl font-black italic text-white tabular-nums tracking-tighter text-center">
           ₽{jackpot.toLocaleString()}
         </div>
-        <div className="flex items-center justify-center gap-2 text-xs text-gray-500 font-medium">
-          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          1 420 ИГРОКОВ В ОНЛАЙНЕ
+        <div className="flex justify-center mt-8">
+          <button className="px-12 py-4 bg-red-600 hover:bg-red-500 rounded-full font-black uppercase italic hover:scale-105 transition-all shadow-lg shadow-red-900/30 tracking-widest text-[10px]">
+            Ворваться в игру
+          </button>
         </div>
-        <button className="mt-8 bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-12 rounded-full text-sm transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(220,38,38,0.4)] uppercase tracking-widest">
-          Играть сейчас
-        </button>
       </div>
 
-      {/* ── СТАТИСТИКА ── */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 w-full max-w-2xl">
-        {[
-          { value: '1.2M+',  label: 'Всего игроков'  },
-          { value: '₽15M+',  label: 'Выплаты в день' },
-          { value: '96.5%',  label: 'Средний RTP'    },
-          { value: '5 мин.', label: 'Мин. вывод'     },
-        ].map((s, i) => (
-          <div key={i} className="bg-white/5 border border-white/5 p-5 rounded-2xl text-center hover:bg-white/10 transition-colors">
-            <div className="text-xl md:text-3xl font-bold text-white">{s.value}</div>
-            <div className="text-[10px] text-gray-500 uppercase tracking-widest mt-2">{s.label}</div>
-          </div>
-        ))}
-      </div>
-
-    </div>
-  );
       {/* ── STATS BAR ── */}
       <div className="grid grid-cols-3 gap-4 w-full max-w-2xl mx-auto">
         {[
@@ -438,9 +421,10 @@ default:
           ))}
         </div>
       </div>
-        
-  }
-  }
+</div>
+      );
+    }
+  };
   return (
     <main className="min-h-screen bg-[#020202] text-white relative overflow-x-hidden font-sans flex flex-col">
       {/* Навигация */}
