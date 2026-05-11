@@ -1,19 +1,5 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-
-const DragonHero = () => (
-  <div className="relative w-full h-full flex items-center justify-center">
-    {/* Добавляем фоновое красное свечение, чтобы картинка не казалась плоской */}
-    <div className="absolute w-[70%] h-[70%] bg-red-600/20 blur-[120px] rounded-full animate-pulse" />
-    
-    {/* Основное изображение из твоего пути /public/images/dragon.png */}
-    <img 
-      src="/images/dragon.png" 
-      alt="Dragon Money" 
-      className="relative z-10 w-full h-full object-contain drop-shadow-[0_0_50px_rgba(220,38,38,0.5)] transition-transform duration-700 hover:scale-105"
-    />
-  </div>
-);
 // ─── ДАННЫЕ ─────────────────────────────────────────────────────────────────
 const STREAMERS = [
   { name: 'LUDOJOP',   platform: 'Twitch',  viewers: 4821 },
@@ -336,11 +322,6 @@ case 'streamers':
           DRAGON <span className="text-red-600">MONEY</span>
         </h1>
       </div>
-
-      {/* КОНТЕЙНЕР ДЛЯ ДРАКОНА */}
-      <div className="w-full max-w-5xl h-[500px] md:h-[650px] relative mx-auto my-12">
-  <DragonHero />
-</div>
 
             {/* Джекпот */}
             <div className="bg-[#050505] border border-white/5 rounded-[50px] p-12 max-w-3xl mx-auto shadow-2xl relative overflow-hidden">
