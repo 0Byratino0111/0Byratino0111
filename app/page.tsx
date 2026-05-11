@@ -316,52 +316,45 @@ default:
   return (
     <div className="flex flex-col items-center space-y-8 animate-in fade-in duration-1000 pb-40">
 
-      {/* ── HERO с драконами ── */}
-      <div className="relative w-full flex flex-col items-center justify-center text-center space-y-4 py-16"
-           style={{ minHeight: '420px' }}>
+ {/* ── HERO ── */}
+<div className="relative flex flex-col items-center justify-center text-center py-20"
+     style={{ 
+       minHeight: '420px',
+       marginLeft: 'calc(-50vw + 50%)',
+       width: '100vw',
+     }}>
 
-        {/* Дракон слева */}
-        <div style={{
-          position: 'absolute', left: '-100px', top: 0,
-          width: '500px', height: '100%', zIndex: 0,
-          backgroundImage: 'url(/dragon-left.jpg.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center right',
-          WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%)',
-          maskImage: 'linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%)',
-        }} />
+  {/* Дракон слева — абсолютно, от левого края экрана */}
+  <img src="/dragon-left.jpg.jpg" alt="" style={{
+    position: 'absolute', left: 0, top: 0,
+    height: '100%', width: '40%',
+    objectFit: 'cover', objectPosition: 'right center',
+    WebkitMaskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
+    maskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
+    zIndex: 0,
+  }} />
 
-        {/* Дракон справа */}
-        <div style={{
-          position: 'absolute', right: '-100px', top: 0,
-          width: '500px', height: '100%', zIndex: 0,
-          backgroundImage: 'url(/dragon-right.jpg.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center left',
-          WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%)',
-          maskImage: 'linear-gradient(to left, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%)',
-        }} />
+  {/* Дракон справа — абсолютно, от правого края экрана */}
+  <img src="/dragon-right.jpg.jpg" alt="" style={{
+    position: 'absolute', right: 0, top: 0,
+    height: '100%', width: '40%',
+    objectFit: 'cover', objectPosition: 'left center',
+    WebkitMaskImage: 'linear-gradient(to left, black 50%, transparent 100%)',
+    maskImage: 'linear-gradient(to left, black 50%, transparent 100%)',
+    zIndex: 0,
+  }} />
 
-        {/* Красное свечение по центру */}
-        <div style={{
-          position: 'absolute', left: '50%', top: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '500px', height: '300px',
-          background: 'radial-gradient(ellipse, rgba(150,0,0,0.18) 0%, transparent 70%)',
-          zIndex: 1,
-        }} />
+  {/* Центральный текст */}
+  <div className="relative" style={{ zIndex: 10 }}>
+    <h1 className="text-6xl md:text-8xl font-black italic tracking-tighter text-white">
+      DRAGON <span className="text-red-600">MONEY</span>
+    </h1>
+    <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed mt-4 px-4">
+      Экосистема азарта нового поколения. Прозрачность, скорость и легендарные выигрыши.
+    </p>
+  </div>
 
-        {/* Текст */}
-        <div className="relative" style={{ zIndex: 10 }}>
-          <h1 className="text-6xl md:text-8xl font-black italic tracking-tighter text-white">
-            DRAGON <span className="text-red-600">MONEY</span>
-          </h1>
-          <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed mt-4 px-4">
-            Экосистема азарта нового поколения. Прозрачность, скорость и легендарные выигрыши в одном месте.
-          </p>
-        </div>
-      </div>
-
+</div>
       {/* ── ДЖЕКПОТ ── */}
       <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-[32px] p-6 md:p-10 text-center shadow-2xl w-full max-w-2xl">
         <div className="text-red-500 font-bold text-xs tracking-[0.3em] mb-4 uppercase">
@@ -498,7 +491,7 @@ default:
       </nav>
 
       {/* Основной контент */}
-      <div className="flex-grow max-w-7xl mx-auto px-6 pt-32 w-full">
+      <div className="flex-grow max-w-7xl mx-auto px-6 pt-32 w-full overflow-x-hidden">
         {renderView()}
       </div>
 
