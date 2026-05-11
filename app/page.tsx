@@ -316,33 +316,54 @@ case 'streamers':
     <div className="flex flex-col items-center space-y-14 animate-in fade-in duration-1000 pb-40">
 
       {/* ── HERO ── */}
-      <div className="relative w-full flex flex-col items-center pt-6 space-y-5">
-        <div className="relative group">
-          <div className="absolute -inset-12 bg-red-600/15 blur-[120px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-          <p className="text-[9px] uppercase tracking-[0.6em] text-red-600 font-black mb-3 text-center">Официальный портал</p>
-          <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase relative text-center leading-none">
-            DRAGON <span className="text-red-600">MONEY</span>
-          </h1>
-          <p className="text-[9px] text-gray-600 uppercase tracking-[0.4em] font-bold text-center mt-3">
-            Лицензия: GLH-OCCHKTW0705032021
-          </p>
-        </div>
-      </div>
+<div className="relative w-full flex items-center justify-center pt-6 min-h-[420px]">
 
-      {/* ── JACKPOT ── */}
-      <div className="bg-[#050505] border border-white/5 rounded-[40px] px-12 py-10 w-full max-w-2xl mx-auto shadow-2xl relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent" />
-        <p className="text-[9px] uppercase tracking-[0.8em] text-red-600 font-black mb-3 text-center">Global Jackpot</p>
-        <div className="text-4xl md:text-6xl font-black italic text-white tabular-nums tracking-tighter text-center">
-          ₽{jackpot.toLocaleString()}
-        </div>
-        <div className="flex justify-center mt-8">
-          <button className="px-12 py-4 bg-red-600 hover:bg-red-500 rounded-full font-black uppercase italic hover:scale-105 transition-all shadow-lg shadow-red-900/30 tracking-widest text-[10px]">
-            Ворваться в игру
-          </button>
-        </div>
-      </div>
+  {/* Дракон слева */}
+  <div className="absolute left-0 bottom-0 w-[340px] md:w-[480px] select-none pointer-events-none"
+       style={{ zIndex: 0 }}>
+    <img
+      src="/dragon-left.jpg"
+      alt=""
+      className="w-full object-contain"
+      style={{
+        maskImage: 'linear-gradient(to right, black 40%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to right, black 40%, transparent 100%)',
+        opacity: 0.85,
+      }}
+    />
+  </div>
 
+  {/* Дракон справа */}
+  <div className="absolute right-0 bottom-0 w-[340px] md:w-[480px] select-none pointer-events-none"
+       style={{ zIndex: 0 }}>
+    <img
+      src="/dragon-right.jpg"
+      alt=""
+      className="w-full object-contain"
+      style={{
+        maskImage: 'linear-gradient(to left, black 40%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to left, black 40%, transparent 100%)',
+        opacity: 0.85,
+        transform: 'scaleX(-1)',
+      }}
+    />
+  </div>
+
+  {/* Центральный текст */}
+  <div className="relative z-10 flex flex-col items-center space-y-5 py-16">
+    <div className="absolute -inset-12 bg-red-600/10 blur-[100px]" />
+    <p className="text-[9px] uppercase tracking-[0.6em] text-red-600 font-black">
+      Официальный портал
+    </p>
+    <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase text-center leading-none relative">
+      DRAGON <span className="text-red-600">MONEY</span>
+    </h1>
+    <p className="text-[9px] text-gray-600 uppercase tracking-[0.4em] font-bold text-center">
+      Лицензия: GLH-OCCHKTW0705032021
+    </p>
+  </div>
+
+</div>
       {/* ── STATS BAR ── */}
       <div className="grid grid-cols-3 gap-4 w-full max-w-2xl mx-auto">
         {[
