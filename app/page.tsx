@@ -316,50 +316,58 @@ case 'streamers':
     <div className="flex flex-col items-center space-y-14 animate-in fade-in duration-1000 pb-40">
 
       {/* ── HERO ── */}
-<div className="relative w-full flex items-center justify-center pt-6 min-h-[420px]">
+{/* ── HERO ── */}
+<div className="relative w-full flex items-center justify-center pt-6" style={{ minHeight: '460px' }}>
 
   {/* Дракон слева */}
-  <div className="absolute left-0 bottom-0 w-[340px] md:w-[480px] select-none pointer-events-none"
-       style={{ zIndex: 0 }}>
-    <img
-      src="/dragon-left.jpg"
-      alt=""
-      className="w-full object-contain"
-      style={{
-        maskImage: 'linear-gradient(to right, black 40%, transparent 100%)',
-        WebkitMaskImage: 'linear-gradient(to right, black 40%, transparent 100%)',
-        opacity: 0.85,
-      }}
-    />
-  </div>
+  <img
+    src="/dragon-left.jpg"
+    alt=""
+    className="absolute select-none pointer-events-none"
+    style={{
+      left: 0,
+      top: '50%',
+      transform: 'translateY(-50%)',
+      width: '420px',
+      height: '420px',
+      objectFit: 'cover',
+      objectPosition: 'center',
+      maskImage: 'linear-gradient(to right, rgba(0,0,0,0.9) 20%, transparent 90%)',
+      WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.9) 20%, transparent 90%)',
+      zIndex: 0,
+    }}
+  />
 
   {/* Дракон справа */}
-  <div className="absolute right-0 bottom-0 w-[340px] md:w-[480px] select-none pointer-events-none"
-       style={{ zIndex: 0 }}>
-    <img
-      src="/dragon-right.jpg"
-      alt=""
-      className="w-full object-contain"
-      style={{
-        maskImage: 'linear-gradient(to left, black 40%, transparent 100%)',
-        WebkitMaskImage: 'linear-gradient(to left, black 40%, transparent 100%)',
-        opacity: 0.85,
-        transform: 'scaleX(-1)',
-      }}
-    />
-  </div>
+  <img
+    src="/dragon-right.jpg"
+    alt=""
+    className="absolute select-none pointer-events-none"
+    style={{
+      right: 0,
+      top: '50%',
+      transform: 'translateY(-50%) scaleX(-1)',
+      width: '420px',
+      height: '420px',
+      objectFit: 'cover',
+      objectPosition: 'center',
+      maskImage: 'linear-gradient(to left, rgba(0,0,0,0.9) 20%, transparent 90%)',
+      WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.9) 20%, transparent 90%)',
+      zIndex: 0,
+    }}
+  />
 
   {/* Центральный текст */}
-  <div className="relative z-10 flex flex-col items-center space-y-5 py-16">
+  <div className="relative flex flex-col items-center space-y-5 py-16" style={{ zIndex: 10 }}>
     <div className="absolute -inset-12 bg-red-600/10 blur-[100px]" />
-    <p className="text-[9px] uppercase tracking-[0.6em] text-red-600 font-black">
+    <p className="text-[9px] uppercase tracking-[0.6em] text-red-600 font-black relative">
       Официальный портал
     </p>
     <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase text-center leading-none relative">
       DRAGON <span className="text-red-600">MONEY</span>
     </h1>
   </div>
-
+  
 </div>
       {/* ── STATS BAR ── */}
       <div className="grid grid-cols-3 gap-4 w-full max-w-2xl mx-auto">
