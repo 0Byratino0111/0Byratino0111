@@ -315,32 +315,17 @@ case 'streamers':
 default:
   return (
     <div className="flex flex-col items-center space-y-8 animate-in fade-in duration-1000 pb-40">
-{/* ── HERO с драконами ── */}
-<div className="relative w-full flex flex-col items-center justify-center text-center py-20 overflow-hidden"
-     style={{ minHeight: '450px' }}> {/* Минимальная высота для блока */}
-
-  {/* Красное свечение по центру (чуть мягче) */}
-  <div style={{
-    position: 'absolute', 
-    left: '50%', 
-    top: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '600px', 
-    height: '400px',
-    background: 'radial-gradient(circle, rgba(185,28,28,0.1) 0%, transparent 75%)',
-    zIndex: 1,
-  }} />
-
-  {/* Текст */}
-  <div className="relative px-4" style={{ zIndex: 10 }}>
-    <h1 className="text-7xl md:text-9xl font-black italic tracking-tighter text-white uppercase leading-none">
-      DRAGON <span className="text-red-600">MONEY</span>
-    </h1>
-    <p className="text-gray-400 text-xs md:text-sm max-w-lg mx-auto leading-relaxed mt-6 uppercase tracking-widest opacity-80">
-      Экосистема азарта нового поколения. Прозрачность, скорость и легендарные выигрыши в одном месте.
-    </p>
-  </div>
+{/* ── HERO ── */}
+<div className="relative flex flex-col items-center justify-center text-center space-y-4 py-20">
+  <div className="absolute inset-0 bg-red-600/5 blur-[120px] rounded-full" />
+  <h1 className="relative text-6xl md:text-8xl font-black italic tracking-tighter text-white">
+    DRAGON <span className="text-red-600">MONEY</span>
+  </h1>
+  <p className="relative text-gray-400 text-sm max-w-xl mx-auto leading-relaxed px-4">
+    Экосистема азарта нового поколения. Прозрачность, скорость и легендарные выигрыши в одном месте.
+  </p>
 </div>
+
 
       {/* ── ДЖЕКПОТ ── */}
       <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-[32px] p-6 md:p-10 text-center shadow-2xl w-full max-w-2xl">
