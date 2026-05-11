@@ -316,40 +316,56 @@ default:
   return (
     <div className="flex flex-col items-center space-y-8 animate-in fade-in duration-1000 pb-40">
 
-{/* ── HERO ── */}
-<div className="relative flex items-center w-full" style={{ minHeight: '420px', marginLeft: 'calc(-50vw + 50%)', width: '100vw' }}>
+default:
+  return (
+    <div className="flex flex-col items-center space-y-8 animate-in fade-in duration-1000 pb-40">
 
-  {/* Левый дракон */}
-  <div className="flex-1 h-full" style={{
-    minHeight: '420px',
-    backgroundImage: 'url(/dragon-left.jpg.jpg)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    WebkitMaskImage: 'linear-gradient(to right, black 0%, black 40%, transparent 100%)',
-    maskImage: 'linear-gradient(to right, black 0%, black 40%, transparent 100%)',
-  }} />
+      {/* ── HERO с драконами ── */}
+      <div className="relative w-full flex flex-col items-center justify-center text-center space-y-4 py-16"
+           style={{ minHeight: '420px' }}>
 
-  {/* Центр */}
-  <div className="flex flex-col items-center justify-center text-center px-8 shrink-0" style={{ width: '520px', zIndex: 10 }}>
-    <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter text-white whitespace-nowrap">
-      DRAGON <span className="text-red-600">MONEY</span>
-    </h1>
-    <p className="text-gray-400 text-xs md:text-sm max-w-xs mx-auto leading-relaxed mt-3">
-      Экосистема азарта нового поколения. Прозрачность, скорость и легендарные выигрыши.
-    </p>
-  </div>
+        {/* Дракон слева */}
+        <div style={{
+          position: 'absolute', left: '-100px', top: 0,
+          width: '500px', height: '100%', zIndex: 0,
+          backgroundImage: 'url(/dragon-left.jpg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center right',
+          WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%)',
+          maskImage: 'linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%)',
+        }} />
 
-  {/* Правый дракон */}
-  <div className="flex-1 h-full" style={{
-    minHeight: '420px',
-    backgroundImage: 'url(/dragon-right.jpg.jpg)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    WebkitMaskImage: 'linear-gradient(to left, black 0%, black 40%, transparent 100%)',
-    maskImage: 'linear-gradient(to left, black 0%, black 40%, transparent 100%)',
-  }} />
+        {/* Дракон справа */}
+        <div style={{
+          position: 'absolute', right: '-100px', top: 0,
+          width: '500px', height: '100%', zIndex: 0,
+          backgroundImage: 'url(/dragon-right.jpg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center left',
+          WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%)',
+          maskImage: 'linear-gradient(to left, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 60%, transparent 100%)',
+        }} />
 
-</div>
+        {/* Красное свечение по центру */}
+        <div style={{
+          position: 'absolute', left: '50%', top: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '500px', height: '300px',
+          background: 'radial-gradient(ellipse, rgba(150,0,0,0.18) 0%, transparent 70%)',
+          zIndex: 1,
+        }} />
+
+        {/* Текст */}
+        <div className="relative" style={{ zIndex: 10 }}>
+          <h1 className="text-6xl md:text-8xl font-black italic tracking-tighter text-white">
+            DRAGON <span className="text-red-600">MONEY</span>
+          </h1>
+          <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed mt-4 px-4">
+            Экосистема азарта нового поколения. Прозрачность, скорость и легендарные выигрыши в одном месте.
+          </p>
+        </div>
+      </div>
+
       {/* ── ДЖЕКПОТ ── */}
       <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-[32px] p-6 md:p-10 text-center shadow-2xl w-full max-w-2xl">
         <div className="text-red-500 font-bold text-xs tracking-[0.3em] mb-4 uppercase">
@@ -381,6 +397,9 @@ default:
           </div>
         ))}
       </div>
+
+    </div>
+  );
       {/* ── STATS BAR ── */}
       <div className="grid grid-cols-3 gap-4 w-full max-w-2xl mx-auto">
         {[
