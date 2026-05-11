@@ -316,10 +316,6 @@ default:
   return (
     <div className="flex flex-col items-center space-y-8 animate-in fade-in duration-1000 pb-40">
 
-default:
-  return (
-    <div className="flex flex-col items-center space-y-8 animate-in fade-in duration-1000 pb-40">
-
       {/* ── HERO с драконами ── */}
       <div className="relative w-full flex flex-col items-center justify-center text-center space-y-4 py-16"
            style={{ minHeight: '420px' }}>
@@ -477,9 +473,7 @@ default:
           ))}
         </div>
       </div>
-          
-    </div>
-  );
+        
   }
   }
   return (
