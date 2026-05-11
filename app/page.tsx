@@ -319,45 +319,6 @@ default:
 <div className="relative w-full flex flex-col items-center justify-center text-center py-20 overflow-hidden"
      style={{ minHeight: '450px' }}> {/* Минимальная высота для блока */}
 
-  {/* Дракон слева */}
-  <div style={{
-    position: 'absolute', 
-    left: '-120px', // Регулируй, насколько сильно он заезжает на экран
-    top: '50%',
-    transform: 'translateY(-50%)',
-    width: 'auto', // Авто-ширина
-    height: 'auto', // Авто-высота
-    zIndex: 0,
-    backgroundImage: 'url(/dragon-left.jpg.jpg)',
-    backgroundSize: 'contain', // Картинка не обрезается
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center center',
-    // Создаем свой тег, чтобы картинка имела физический размер
-    content: "url(/dragon-left.jpg.jpg)", 
-    maxHeight: '450px', // Максимальная высота, чтобы не был гигантским
-    WebkitMaskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
-    maskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
-  }} />
-
-  {/* Дракон справа */}
-  <div style={{
-    position: 'absolute', 
-    right: '-120px', 
-    top: '50%',
-    transform: 'translateY(-50%)',
-    width: 'auto', 
-    height: 'auto', 
-    zIndex: 0,
-    backgroundImage: 'url(/dragon-right.jpg.jpg)',
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center center',
-    content: "url(/dragon-right.jpg.jpg)", // Физический размер
-    maxHeight: '450px', 
-    WebkitMaskImage: 'linear-gradient(to left, black 50%, transparent 100%)',
-    maskImage: 'linear-gradient(to left, black 50%, transparent 100%)',
-  }} />
-
   {/* Красное свечение по центру (чуть мягче) */}
   <div style={{
     position: 'absolute', 
