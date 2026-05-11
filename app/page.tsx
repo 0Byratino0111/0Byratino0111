@@ -317,44 +317,42 @@ case 'streamers':
     <div className="flex flex-col items-center space-y-14 animate-in fade-in duration-1000 pb-40">
 
 {/* ── HERO ── */}
-<div className="relative flex items-center justify-center" 
-     style={{ minHeight: '460px', width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
+<div className="relative flex items-center justify-center" style={{ minHeight: '500px' }}>
 
   {/* Дракон слева */}
   <div style={{
-    position: 'absolute', left: 0, top: 0,
-    width: '35%', height: '100%', zIndex: 0,
+    position: 'absolute', left: '-24px', top: 0,
+    width: '500px', height: '100%', zIndex: 0,
     backgroundImage: 'url(/dragon-left.jpg.jpg)',
     backgroundSize: 'cover',
-    backgroundPosition: 'right center',
-    WebkitMaskImage: 'linear-gradient(to right, black 0%, black 30%, transparent 100%)',
-    maskImage: 'linear-gradient(to right, black 0%, black 30%, transparent 100%)',
+    backgroundPosition: 'center',
+    WebkitMaskImage: 'linear-gradient(to right, black 0%, black 55%, transparent 100%)',
+    maskImage: 'linear-gradient(to right, black 0%, black 55%, transparent 100%)',
+    opacity: 0.95,
   }} />
 
   {/* Дракон справа */}
   <div style={{
-    position: 'absolute', right: 0, top: 0,
-    width: '35%', height: '100%', zIndex: 0,
+    position: 'absolute', right: '-24px', top: 0,
+    width: '500px', height: '100%', zIndex: 0,
     backgroundImage: 'url(/dragon-right.jpg.jpg)',
     backgroundSize: 'cover',
-    backgroundPosition: 'left center',
-    WebkitMaskImage: 'linear-gradient(to left, black 0%, black 30%, transparent 100%)',
-    maskImage: 'linear-gradient(to left, black 0%, black 30%, transparent 100%)',
-  }} />
-
-  {/* Тёмный центр */}
-  <div style={{
-    position: 'absolute', left: '25%', right: '25%', top: 0, bottom: 0,
-    background: 'radial-gradient(ellipse at center, rgba(120,0,0,0.15) 0%, #020202 70%)',
-    zIndex: 1,
+    backgroundPosition: 'center',
+    WebkitMaskImage: 'linear-gradient(to left, black 0%, black 55%, transparent 100%)',
+    maskImage: 'linear-gradient(to left, black 0%, black 55%, transparent 100%)',
+    opacity: 0.95,
   }} />
 
   {/* Центральный текст */}
-  <div className="relative flex flex-col items-center space-y-4" style={{ zIndex: 10 }}>
-    <p className="text-[9px] uppercase tracking-[0.6em] text-red-600 font-black">
+  <div className="relative flex flex-col items-center space-y-4 px-8" style={{ zIndex: 10 }}>
+    <div style={{
+      position: 'absolute', inset: '-60px',
+      background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.85) 40%, transparent 100%)',
+    }} />
+    <p className="relative text-[9px] uppercase tracking-[0.6em] text-red-600 font-black">
       Официальный портал
     </p>
-    <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase text-center leading-none">
+    <h1 className="relative text-5xl md:text-7xl font-black italic tracking-tighter uppercase text-center leading-none">
       DRAGON <span className="text-red-600">MONEY</span>
     </h1>
   </div>
