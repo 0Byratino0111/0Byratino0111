@@ -320,37 +320,26 @@ case 'streamers':
 <div className="relative w-full flex items-center justify-center" style={{ minHeight: '460px' }}>
 
   {/* Дракон слева */}
-  <div className="absolute left-0 top-0 h-full" style={{ width: '420px', zIndex: 0 }}>
-    <Image
-      src="/dragon-left.jpg.jpg"
-      alt=""
-      fill
-      style={{
-        objectFit: 'cover',
-        objectPosition: 'center',
-        maskImage: 'linear-gradient(to right, black 30%, transparent 100%)',
-        WebkitMaskImage: 'linear-gradient(to right, black 30%, transparent 100%)',
-        opacity: 0.9,
-      }}
-    />
-  </div>
+  <div style={{
+    position: 'absolute', left: 0, top: 0,
+    width: '420px', height: '100%', zIndex: 0,
+    backgroundImage: 'url(/dragon-left.jpg.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    WebkitMaskImage: 'linear-gradient(to right, black 0%, black 40%, transparent 100%)',
+    maskImage: 'linear-gradient(to right, black 0%, black 40%, transparent 100%)',
+  }} />
 
   {/* Дракон справа */}
-  <div className="absolute right-0 top-0 h-full" style={{ width: '420px', zIndex: 0 }}>
-    <Image
-      src="/dragon-right.jpg.jpg"
-      alt=""
-      fill
-      style={{
-        objectFit: 'cover',
-        objectPosition: 'center',
-        maskImage: 'linear-gradient(to left, black 30%, transparent 100%)',
-        WebkitMaskImage: 'linear-gradient(to left, black 30%, transparent 100%)',
-        opacity: 0.9,
-        transform: 'scaleX(-1)',
-      }}
-    />
-  </div>
+  <div style={{
+    position: 'absolute', right: 0, top: 0,
+    width: '420px', height: '100%', zIndex: 0,
+    backgroundImage: 'url(/dragon-right.jpg.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    WebkitMaskImage: 'linear-gradient(to left, black 0%, black 40%, transparent 100%)',
+    maskImage: 'linear-gradient(to left, black 0%, black 40%, transparent 100%)',
+  }} />
 
   {/* Центральный текст */}
   <div className="relative flex flex-col items-center space-y-5 py-20" style={{ zIndex: 10 }}>
@@ -362,7 +351,6 @@ case 'streamers':
       DRAGON <span className="text-red-600">MONEY</span>
     </h1>
   </div>
-
 </div>
       {/* ── STATS BAR ── */}
       <div className="grid grid-cols-3 gap-4 w-full max-w-2xl mx-auto">
