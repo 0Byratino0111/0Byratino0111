@@ -315,46 +315,50 @@ case 'streamers':
 default:
   return (
     <div className="flex flex-col items-center space-y-8 animate-in fade-in duration-1000 pb-40">
-
-      {/* ── HERO с драконами ── */}
+{/* ── HERO с драконами ── */}
 <div className="relative w-full flex flex-col items-center justify-center text-center py-20 overflow-hidden"
-     style={{ minHeight: '500px' }}>
+     style={{ minHeight: '450px' }}> {/* Минимальная высота для блока */}
 
   {/* Дракон слева */}
   <div style={{
     position: 'absolute', 
-    left: '-50px', // Немного задвигаем за край
+    left: '-120px', // Регулируй, насколько сильно он заезжает на экран
     top: '50%',
     transform: 'translateY(-50%)',
-    width: '450px', 
-    height: '100%', 
+    width: 'auto', // Авто-ширина
+    height: 'auto', // Авто-высота
     zIndex: 0,
     backgroundImage: 'url(/dragon-left.jpg.jpg)',
-    backgroundSize: 'contain', // Картинка не будет обрезаться
+    backgroundSize: 'contain', // Картинка не обрезается
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'left center',
-    WebkitMaskImage: 'linear-gradient(to right, black 40%, transparent 100%)',
-    maskImage: 'linear-gradient(to right, black 40%, transparent 100%)',
+    backgroundPosition: 'center center',
+    // Создаем свой тег, чтобы картинка имела физический размер
+    content: "url(/dragon-left.jpg.jpg)", 
+    maxHeight: '450px', // Максимальная высота, чтобы не был гигантским
+    WebkitMaskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
+    maskImage: 'linear-gradient(to right, black 50%, transparent 100%)',
   }} />
 
   {/* Дракон справа */}
   <div style={{
     position: 'absolute', 
-    right: '-50px', 
+    right: '-120px', 
     top: '50%',
     transform: 'translateY(-50%)',
-    width: '450px', 
-    height: '100%', 
+    width: 'auto', 
+    height: 'auto', 
     zIndex: 0,
     backgroundImage: 'url(/dragon-right.jpg.jpg)',
-    backgroundSize: 'contain', // Картинка не будет обрезаться
+    backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'right center',
-    WebkitMaskImage: 'linear-gradient(to left, black 40%, transparent 100%)',
-    maskImage: 'linear-gradient(to left, black 40%, transparent 100%)',
+    backgroundPosition: 'center center',
+    content: "url(/dragon-right.jpg.jpg)", // Физический размер
+    maxHeight: '450px', 
+    WebkitMaskImage: 'linear-gradient(to left, black 50%, transparent 100%)',
+    maskImage: 'linear-gradient(to left, black 50%, transparent 100%)',
   }} />
 
-  {/* Красное свечение по центру */}
+  {/* Красное свечение по центру (чуть мягче) */}
   <div style={{
     position: 'absolute', 
     left: '50%', 
@@ -362,7 +366,7 @@ default:
     transform: 'translate(-50%, -50%)',
     width: '600px', 
     height: '400px',
-    background: 'radial-gradient(circle, rgba(185,28,28,0.15) 0%, transparent 70%)',
+    background: 'radial-gradient(circle, rgba(185,28,28,0.1) 0%, transparent 75%)',
     zIndex: 1,
   }} />
 
