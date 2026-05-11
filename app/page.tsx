@@ -311,35 +311,120 @@ case 'streamers':
       </div>
     </div>
   );
-     // --- ГЛАВНАЯ (ТОЛЬКО ЦЕНТР) ---
-    default:
-      return (
-        <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-20 animate-in fade-in duration-1000">
-          
-          {/* Логотип */}
-          <div className="text-center relative">
-            <div className="absolute -inset-20 bg-red-600/5 blur-[120px] rounded-full" />
-            <h1 className="text-8xl md:text-[13rem] font-black italic tracking-tighter uppercase leading-none relative z-10">
-              DRAGON <span className="text-red-600">MONEY</span>
-            </h1>
-          </div>
+ default:
+  return (
+    <div className="flex flex-col items-center space-y-14 animate-in fade-in duration-1000 pb-40">
 
-          {/* Джекпот */}
-          <div className="text-center relative">
-            <div className="absolute inset-0 bg-red-600/10 blur-[80px] rounded-full animate-pulse" />
-            <p className="text-[11px] font-black uppercase tracking-[0.6em] text-gray-600 mb-6 relative text-center w-full">
-              Global Jackpot
-            </p>
-            <div className="text-8xl md:text-[10rem] font-black italic text-white relative flex items-center justify-center gap-6 tabular-nums tracking-tight">
-              <span className="text-red-600 text-6xl md:text-8xl not-italic">₽</span>
-              {jackpot.toLocaleString()}
-            </div>
-          </div>
-
+      {/* ── HERO ── */}
+      <div className="relative w-full flex flex-col items-center pt-6 space-y-5">
+        <div className="relative group">
+          <div className="absolute -inset-12 bg-red-600/15 blur-[120px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+          <p className="text-[9px] uppercase tracking-[0.6em] text-red-600 font-black mb-3 text-center">Официальный портал</p>
+          <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase relative text-center leading-none">
+            DRAGON <span className="text-red-600">MONEY</span>
+          </h1>
+          <p className="text-[9px] text-gray-600 uppercase tracking-[0.4em] font-bold text-center mt-3">
+            Лицензия: GLH-OCCHKTW0705032021
+          </p>
         </div>
-      );
-  } // Закрывает switch
-}; // Закрывает функцию renderView
+      </div>
+
+      {/* ── JACKPOT ── */}
+      <div className="bg-[#050505] border border-white/5 rounded-[40px] px-12 py-10 w-full max-w-2xl mx-auto shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-red-600 to-transparent" />
+        <p className="text-[9px] uppercase tracking-[0.8em] text-red-600 font-black mb-3 text-center">Global Jackpot</p>
+        <div className="text-4xl md:text-6xl font-black italic text-white tabular-nums tracking-tighter text-center">
+          ₽{jackpot.toLocaleString()}
+        </div>
+        <div className="flex justify-center mt-8">
+          <button className="px-12 py-4 bg-red-600 hover:bg-red-500 rounded-full font-black uppercase italic hover:scale-105 transition-all shadow-lg shadow-red-900/30 tracking-widest text-[10px]">
+            Ворваться в игру
+          </button>
+        </div>
+      </div>
+
+      {/* ── STATS BAR ── */}
+      <div className="grid grid-cols-3 gap-4 w-full max-w-2xl mx-auto">
+        {[
+          { label: 'Онлайн сейчас', value: '14 832' },
+          { label: 'Выплачено сегодня', value: '₽9.2М' },
+          { label: 'Топ выигрыш', value: '₽847 000' },
+        ].map((s, i) => (
+          <div key={i} className="bg-[#050505] border border-white/5 rounded-[24px] p-5 text-center">
+            <p className="text-[8px] uppercase tracking-widest text-gray-600 font-black mb-1">{s.label}</p>
+            <p className="text-base font-black italic text-white">{s.value}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* ── PROMO CARDS ── */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full max-w-4xl mx-auto">
+        {[
+          {
+            icon: '🎁',
+            tag: 'Новичкам',
+            title: 'Приветственный\nбонус',
+            value: '+200%',
+            sub: 'на первый депозит',
+          },
+          {
+            icon: '💎',
+            tag: 'Еженедельно',
+            title: 'Кэшбэк\nдо 25%',
+            value: 'БЕЗ ВЕЙДЖЕРА',
+            sub: 'для Diamond игроков',
+          },
+          {
+            icon: '🌀',
+            tag: 'Каждый день',
+            title: 'Фриспины\nза депозит',
+            value: '100 FS',
+            sub: 'в лучших слотах',
+          },
+        ].map((promo, i) => (
+          <div key={i} className="bg-[#050505] border border-white/5 rounded-[32px] p-8 relative overflow-hidden group hover:border-red-600/30 transition-all duration-500 cursor-pointer">
+            <div className="absolute inset-0 bg-gradient-to-br from-red-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="text-3xl mb-4 opacity-60 group-hover:opacity-90 transition-opacity">{promo.icon}</div>
+            <span className="text-[8px] font-black uppercase tracking-widest text-red-600 border border-red-600/30 px-2 py-0.5 rounded-full">{promo.tag}</span>
+            <h3 className="text-sm font-black italic uppercase text-white mt-3 leading-tight whitespace-pre-line">{promo.title}</h3>
+            <p className="text-lg font-black italic text-red-500 mt-2">{promo.value}</p>
+            <p className="text-[9px] text-gray-600 uppercase font-bold tracking-widest mt-1">{promo.sub}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* ── LATEST WINS ── */}
+      <div className="w-full max-w-4xl mx-auto">
+        <p className="text-[9px] uppercase tracking-[0.5em] text-gray-600 font-black mb-5 text-center">Последние выигрыши</p>
+        <div className="space-y-2">
+          {[
+            { user: 'AN***OV', game: 'Gates of Olympus', amount: '₽124 500', x: 'x248' },
+            { user: 'MA***NA', game: 'Sweet Bonanza',    amount: '₽38 200',  x: 'x76'  },
+            { user: 'VI***OR', game: 'Money Train 3',    amount: '₽291 000', x: 'x582' },
+            { user: 'EK***NA', game: 'Razor Shark',      amount: '₽17 650',  x: 'x35'  },
+            { user: 'DM***EV', game: 'Dragon Inhouse',   amount: '₽847 000', x: 'x169' },
+          ].map((w, i) => (
+            <div key={i} className="flex items-center justify-between bg-[#050505] border border-white/5 rounded-2xl px-5 py-3 hover:border-white/10 transition-colors">
+              <div className="flex items-center gap-3">
+                <div className="w-6 h-6 rounded-full bg-red-900/40 border border-red-800/40 flex items-center justify-center text-[8px] font-black text-red-500">
+                  {w.user.slice(0, 2)}
+                </div>
+                <span className="text-[10px] font-black text-gray-400 uppercase">{w.user}</span>
+              </div>
+              <span className="text-[9px] text-gray-600 font-bold uppercase hidden md:block">{w.game}</span>
+              <div className="flex items-center gap-3">
+                <span className="text-[8px] font-black text-red-600 bg-red-600/10 px-2 py-0.5 rounded-full">{w.x}</span>
+                <span className="text-[11px] font-black italic text-white">{w.amount}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+          
+    </div>
+  );
+  }
+  }
   return (
     <main className="min-h-screen bg-[#020202] text-white relative overflow-x-hidden font-sans flex flex-col">
       {/* Навигация */}
@@ -382,4 +467,4 @@ case 'streamers':
       </footer>
     </main>
   );
-}
+    }
