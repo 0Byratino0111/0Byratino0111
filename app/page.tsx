@@ -322,7 +322,7 @@ default:
           <div className="absolute -inset-12 bg-red-600/15 blur-[120px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
           <p className="text-[9px] uppercase tracking-[0.6em] text-red-600 font-black mb-3 text-center">Официальный портал</p>
           <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase relative text-center leading-none">
-            DRAGON <span className="text-red-600">MONEY</span>
+            BYCH <span className="text-red-600">MONEY</span>
           </h1>
         </div>
       </div>
@@ -453,13 +453,13 @@ default:
       <footer className="w-full border-t border-white/5 py-16 mt-auto bg-black">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="space-y-4 text-center md:text-left">
-            <h4 className="text-xl font-black italic uppercase text-white tracking-widest">Dragon Links</h4>
+            <h4 className="text-xl font-black italic uppercase text-white tracking-widest">Bych Links</h4>
             <div className="flex flex-col md:flex-row gap-4 md:gap-8">
               <a href="https://t.me/drgn_money_support_bot" target="_blank" rel="noreferrer" className="text-[10px] font-black text-gray-500 hover:text-red-600 uppercase tracking-widest transition-colors">● Поддержка 24/7</a>
               <a href="https://t.me/dragonmoney_official" target="_blank" rel="noreferrer" className="text-[10px] font-black text-gray-500 hover:text-red-600 uppercase tracking-widest transition-colors">● Telegram канал</a>
             </div>
           </div>
-          <p className="text-[9px] font-black text-gray-800 uppercase tracking-widest">© 2026 Dragon Legacy Official</p>
+          <p className="text-[9px] font-black text-gray-800 uppercase tracking-widest">© 2026 Bych Legacy Official</p>
         </div>
       </footer>
     </main>
